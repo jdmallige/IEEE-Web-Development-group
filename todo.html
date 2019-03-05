@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do app </title>
+
+    <style>
+        ul li {
+  cursor: pointer;
+  position: relative;
+  margin:10px;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+        }
+
+    .container
+    {
+        margin:0 auto;
+        background-color: white;
+        text-align: center;
+        width:80%;
+    }
+    body{
+        background-color:#333;
+    }
+    div{
+        padding:20px;
+        margin:0 auto;
+    }
+    button
+    {
+        background-color: lightgreen;
+        width:100px;
+        height:50px;
+        border-radius: 10px;
+        
+        margin: 10px;
+    }
+    button:hover{
+        background-color: white;
+        border:2px solid black;
+        transition-duration: 300ms;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <div class="wrapper">
+        <div class="heading">
+            <h1>To Do Application</h1>
+        </div>
+    
+    </div>
+
+    <div class="wrapper" id="todo">
+        <ul id="list">
+            
+        </ul>
+        
+    </div>
+
+    <form method="GET" >
+        <label for="todo">Enter the  Todo</label>
+        <input type="text" name="todo" id="input">
+        <br>
+        <button onclick="return addTodo();">Submit</button>
+    </form>
+</div>
+
+
+</body>
+<script>
+//addto do funtion
+function addTodo (){
+// target the input tag
+const input=document.getElementById('input');
+
+//target the main list 
+const list=document.getElementById('list');
+// create a new li tag
+var li =document.createElement('LI');
+// copy the input value to var t
+var t=document.createTextNode(input.value);
+// add var t to li tag
+li.appendChild(t);
+
+  var span =document.createElement('SPAN');
+  span.className='close';
+  t=document.createTextNode('\u00D7')
+  span.appendChild(t);
+  li.appendChild(span);
+  list.appendChild(li); 
+  // target all the elements having classname as close
+
+  var del=document.getElementsByClassName('close');
+  // loop thorugh each one of them and add onclick funtion to make display as none css property
+  for (i = 0; i < del.length; i++) {
+    del[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+}
+return false;
+}
+//edit
+// try to implement
+ 
+
+
+
+</script>
+
+</html>

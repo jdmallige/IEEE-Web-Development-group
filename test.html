@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+
+    <style>
+    .container{
+        margin:0 auto;
+        padding:0;
+
+    }
+    body{
+        background-color:white;
+
+    }
+    .wrapper{
+        text-align:center;
+        padding:30px;
+    }
+    
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="wrapper">
+            <h1>Timer</h1>
+        </div>
+    </div>
+ 
+     <div class="wrapper" id="some">
+         <h3 id="time"></h3>
+     </div>
+</body>
+
+<script>
+    // targeting the h3 tag with id time
+var time = document.getElementById('time');
+console.log(time.innerHTML);
+ // set timer as required
+ var timer =10;
+ // setinterval function execute after every second
+ var func= setInterval(function(){
+    time.innerHTML=timer;
+   
+    if(timer==0)
+   clearInterval(func);
+    timer--;
+ },1000);
+
+
+</script>
+
+
+</html>
